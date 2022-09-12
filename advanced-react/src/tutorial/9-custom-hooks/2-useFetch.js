@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from "react";
 
-export const useFetch = (url) => {
+const useFetch = (url) => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
 
@@ -14,5 +14,8 @@ export const useFetch = (url) => {
   useEffect(() => {
     getProducts();
   }, [url, getProducts]);
+
   return { loading, products };
 };
+
+export default useFetch;
